@@ -1,4 +1,4 @@
-package main.java.com.ragnarady.game.puyo.utils;
+package com.ragnarady.game.puyo.utils;
 
 import java.awt.*;
 
