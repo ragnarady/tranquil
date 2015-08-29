@@ -1,10 +1,10 @@
-package main.java.com.ragnarady.game.puyo;
+package com.ragnarady.game.puyo;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Main game window w/ {@link main.java.com.ragnarady.game.puyo.Board} component.
+ * Main game window w/ {@link com.ragnarady.game.puyo.Board} component.
  */
 public class Game extends JFrame {
 

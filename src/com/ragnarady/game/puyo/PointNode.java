@@ -1,4 +1,4 @@
-package main.java.com.ragnarady.game.puyo;
+package com.ragnarady.game.puyo;
 
 /**
  * Provides way to capture puyos' combos to store their positions.

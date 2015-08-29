@@ -1,6 +1,6 @@
-package main.java.com.ragnarady.game.puyo;
+package com.ragnarady.game.puyo;
 
-import main.java.com.ragnarady.game.puyo.utils.ImageUtils;
+import com.ragnarady.game.puyo.utils.ImageUtils;
 
 import javax.swing.*;
 import java.awt.*;

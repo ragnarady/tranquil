@@ -1,4 +1,4 @@
-package main.java.com.ragnarady.game.puyo.utils;
+package com.ragnarady.game.puyo.utils;
 
 import java.awt.*;
 
@@ -7,7 +7,7 @@ import java.awt.*;
  */
 public class ImageUtils {
 
-    public static final String SRC_MAIN_RES_IMAGES = "src\\main\\res\\images";
+    public static final String SRC_MAIN_RES_IMAGES = "res\\images";
 
     /**
      * Loads images from
