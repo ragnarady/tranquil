@@ -16,17 +16,16 @@ class Board extends JComponent implements ActionListener {
     static int puyosTable[][];
 
     Image puyoImages[];
-    PointNode combo; //Formation of combo is checked using this object
-    Timer timer, timerDestroy, timerDropUndestroyed, timerAnimation;    //different timers used for animation of puyos
-
+    Timer timer, timerDestroy, timerDropUndestroyed, timerAnimation;   
     Random random;
+    
+    PointNode combo;
 
-    int rotation;            //used for the rotation of the puyos
-    int puyoSize;            //length of the puyo ie. width and height
-    int puyosToDelete;        //count of puyos when formed combo to delete
-    int leftPuyo, rightPuyo;            //The two puyos generate to be next are stored in leftPuyo and rightPuyo
-    int delay, puyosJoint, puyosRemoved;//puyosJoint is number of joint puyos(single piece) generated
-    //number of removed puyos by forming combo
+    int rotation;            
+    int puyoSize;            
+    int puyosToDelete;        
+    int puyoOne, puyoTwo;            //The two puyos generate to be next are stored in leftPuyo and rightPuyo
+    int delay, puyosJoint, puyosRemoved;
     int animation;        //to build the pixel by pixel animation (movement of generated puyos)
 
     boolean isPuyoDropped;    //generated puyo isPuyoDropped the bottom or in movement
@@ -74,8 +73,8 @@ class Board extends JComponent implements ActionListener {
         puyosToDelete = 0;
         isGameStarted = false;
         isGameLost = false;
-        leftPuyo = 0;
-        rightPuyo = 0;
+        puyoOne = 0;
+        puyoTwo = 0;
         delay = 0;
         puyosJoint = -1;
         puyosRemoved = 0;
@@ -120,8 +119,8 @@ class Board extends JComponent implements ActionListener {
             p = columnsNumber / 2;
         }
         if (puyosTable[0][p] == 0 && puyosTable[1][p] == 0) {
-            puyosTable[0][p] = leftPuyo;        //leftPuyo and rightPuyo are randomly generated Puyos
-            puyosTable[1][p] = rightPuyo;
+            puyosTable[0][p] = puyoOne;        //leftPuyo and rightPuyo are randomly generated Puyos
+            puyosTable[1][p] = puyoTwo;
         } else {
             timer.stop();
             isGameLost = true;        //game is over
@@ -131,9 +130,9 @@ class Board extends JComponent implements ActionListener {
         //Odd numbers 1,3,5,7(for 4 colors) are used for generating puyos which are in movement
         //Even numbers 2,4,6,6 are used for fallen puyos on bottom of the window
         while ((randomInt = random.nextInt(8)) % 2 == 0) ;
-        leftPuyo = randomInt;
+        puyoOne = randomInt;
         while ((randomInt = random.nextInt(8)) % 2 == 0) ;
-        rightPuyo = randomInt;
+        puyoTwo = randomInt;
         puyosJoint++;
         rotation = 1;
     }

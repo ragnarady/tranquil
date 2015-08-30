@@ -9,29 +9,29 @@ import java.awt.*;
 public class Game extends JFrame {
 
     public static final String PUYO_GAME = "PuyoGame";
+    public static final String PUYO_RUN = "PuyoGame is started";
+    public static final int COLUMNS_NUMBER = 6;
+    public static final int ROWS_NUMBER = 12;
 
     Board gameBoard;
 
     public Game() {
         super(PUYO_GAME);
 
-        int columnsNumber = 6;
-        int rowsNumber = 12;
-
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int screenWidth = screenSize.width;
 
-        int nodeSize = screenWidth / (4 * columnsNumber);
+        int nodeSize = screenWidth / (4 * COLUMNS_NUMBER);
 
-        gameBoard = new Board(nodeSize, rowsNumber, columnsNumber);
+        gameBoard = new Board(nodeSize, ROWS_NUMBER, COLUMNS_NUMBER);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
+        
         getContentPane().add(gameBoard);
 
         setResizable(false);
 
-        setPreferredSize(new Dimension(nodeSize * columnsNumber + 5, nodeSize * rowsNumber + 25));
+        setPreferredSize(new Dimension(nodeSize * COLUMNS_NUMBER + 5, nodeSize * ROWS_NUMBER + 25));
 
         pack();
 
@@ -41,7 +41,7 @@ public class Game extends JFrame {
     }
 
     public static void main(String args[]) {
-        System.out.println("Starting PuyoGame...");
+        System.out.println(PUYO_RUN);
         new Game();
     }
 }
