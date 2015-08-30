@@ -31,8 +31,6 @@ public class Game extends JFrame {
 
         setResizable(false);
 
-        setPreferredSize(new Dimension(nodeSize * COLUMNS_NUMBER + 5, nodeSize * ROWS_NUMBER + 25));
-
         pack();
 
         setLocationRelativeTo(null);
