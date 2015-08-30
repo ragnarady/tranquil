@@ -100,6 +100,11 @@ class Board extends JComponent implements ActionListener {
         repaint();
     }
 
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(puyoSize * columnsNumber, puyoSize * rowsNumber);
+    }
+
     public void setDelays(int delay) {
         timer.setDelay(1075 - delay);
         timerAnimation.setDelay(52 - delay);
