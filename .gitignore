@@ -104,4 +104,4 @@ local.properties
 *.log
 
 #images folder
-res/images/Thumbs.db
+src/main/resources/images/Thumbs.db
